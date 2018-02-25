@@ -28,8 +28,8 @@ export class Card extends React.Component{
         }.bind(this),3000)
     }
     componentWillReceiveProps(){
-       // console.log(this.props)
-       // if(this.props.counter==1){this.setState({actual_val:'hidden'})}
+        console.log(this.props)
+        if(this.props.counter==2){this.setState({actual_val:'hidden'})}
     }
     onCardClick(){
         if(this.props.counter<2){
