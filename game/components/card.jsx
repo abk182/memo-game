@@ -32,12 +32,9 @@ export class Card extends React.Component{
         if(this.props.counter==2){this.setState({is_active:false})}
     }
     onCardClick(){
-        console.log(this.state)
         if(!this.state.is_active && this.props.counter<2){
             this.setState({is_active:true})
             this.props.handler();
-        } else {
-            this.setState({is_active:false})
         }
     }
     render(){
