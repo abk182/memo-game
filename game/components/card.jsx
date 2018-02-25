@@ -7,16 +7,29 @@ export const Card = ({value,handler}) => (
     </div>
 )*/
 
+
 export class Card extends React.Component{
     constructor(props){
         super(props)
-        this.state = {actualVal:'hidden',cardVal:props.value}
+        this.state = {actualVal:props.value,cardVal:props.value}
     }
-    componentWillMount(){}
-    componentDidMount(){}
+    componentDidMount(){
+        setTimeout(function () {
+            this.setState({actualVal:'hidden'})
+        }.bind(this),3000)
+    }
+    componentWillReceiveProps(){
+        if (this.props.selectedCard == ''){
+
+        } else {
+            this.setState({actualVal:'hidden'})
+        }
+    }
     onCardClick(){
         this.setState({actualVal:this.state.cardVal})
-        this.props.handler(this.state.actualVal);
+        setTimeout(function(){
+            this.props.handler(this.state.actualVal);
+        }.bind(this),1000)
     }
     render(){
         console.log(this.state)

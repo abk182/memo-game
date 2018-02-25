@@ -5,7 +5,6 @@ import { Card } from "./card.jsx";
 export class GameTable extends React.Component{
     constructor(props){
         super(props)
-        console.log(props)
         this.state={
             playCards:[],
             selectedCard:''
