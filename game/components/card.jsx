@@ -12,9 +12,9 @@ export class Card extends React.Component{
     constructor(props){
         super(props)
         this.state = {
-            actual_val:props.card_val,
             card_val:props.card_val,
-            card_id:props.card_id
+            card_id:props.card_id,
+            is_active:true
         }
     }
     componentDidMount(){
@@ -23,26 +23,28 @@ export class Card extends React.Component{
             alert('Rano!')
         }
         setTimeout(function () {
-            this.setState({actual_val:'hidden'})
+            this.setState({is_active:false})
             this.onCardClick = tmp_func;
         }.bind(this),3000)
     }
     componentWillReceiveProps(){
-        console.log(this.props)
-        if(this.props.counter==2){this.setState({actual_val:'hidden'})}
+        //console.log(this.props)
+        if(this.props.counter==2){this.setState({is_active:false})}
     }
     onCardClick(){
-        if(this.props.counter<2){
-            this.setState({actual_val:this.state.card_val})
+        console.log(this.state)
+        if(!this.state.is_active && this.props.counter<2){
+            this.setState({is_active:true})
             this.props.handler();
-        } else {alert('ouououou stope!')}
-
-
+        } else {
+            this.setState({is_active:false})
+        }
     }
     render(){
+        let pic = this.state.is_active ? this.state.card_val : 'hidden'
         return(
             <div className={this.props.value+' '+'card'} onClick={()=>this.onCardClick()}>
-                <img src={'/img/cards/'+this.state.actual_val+'.png'} className={'card'}/>
+                <img src={'/img/cards/'+pic+'.png'} className={'card'}/>
             </div>
         )
     }

@@ -26,7 +26,6 @@ export class GameTable extends React.Component{
                 }
             })
         } else {
-            if(card_id == this.state.selectedCard.id){alert('Ti idiot?'); return;}
             setTimeout(function () {
                 let msg = (card_val == this.state.selectedCard.val) ? 'ono!' : 'ne ono'
                 alert (msg)
