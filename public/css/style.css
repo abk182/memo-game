@@ -1,18 +1,60 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+
 }
 
 a {
   color: #00B7FF;
 }
 
+#root, .main{
+  width: 100%;
+  height: 100%;
+}
+
+
 .table{
-  width:900px;
+  width:100%;
 }
 
 .card{
   display: inline-block;
-  width: 150px;
+  width: 16%;
+  margin:0.3%;
+}
+.card img{
+  width: 100%;
+  height: auto;
 }
 
+.score{
+  width:100%;
+  margin:0;
+  margin:20px 0;
+}
+
+.score p{
+  font-weight: bolder;
+  font-size: 30px;
+  color: darkslategray;
+  text-align: center;
+  margin:0px;
+}
+.score a{
+  font-size: 15px;
+  color: lightgray;
+  text-decoration: none;
+}
+
+.start{
+  width:100%;
+  height: 100%;
+  margin:0;
+}
+
+.start-btn{
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}

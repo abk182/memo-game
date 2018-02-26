@@ -1,15 +1,16 @@
 import React from 'react'
 import { Engine } from "../engine/engine";
 import { Card } from "./card.jsx";
+import { Score } from "./score.jsx";
 
 export class GameTable extends React.Component{
     constructor(props){
         super(props)
         this.state={
             playCards:[],
-            openCards:[],
             selectedCard:{},
-            counter:0
+            counter:0,
+            score:0
         }
     }
     componentWillMount(){
@@ -25,18 +26,16 @@ export class GameTable extends React.Component{
             if (!this.state.selectedCard.hasOwnProperty('state')){
                 this.setState({selectedCard:card})
             } else {
-
                 if (card.state.val == this.state.selectedCard.state.val){
                     this.state.selectedCard.setState({is_open:true})
                     card.setState({is_open:true})
-                    this.setState({selectedCard:{},counter:0})
+                    this.setState({selectedCard:{},counter:0,score:this.state.score+1})
                 } else {
                     setTimeout(function () {
-                        alert('TRY AGAIN~!')
                         this.state.selectedCard.setState({is_active:false})
                         card.setState({is_active:false})
-                        this.setState({selectedCard:{},counter:0})
-                    }.bind(this),1000)
+                        this.setState({selectedCard:{},counter:0,score:this.state.score-1})
+                    }.bind(this),500)
                 }
             }
         }
@@ -54,6 +53,7 @@ export class GameTable extends React.Component{
                               handler={(obj)=>this.selectCard(obj)}/>
                     ))
                 }
+                <Score score={this.state.score}/>
             </div>
         )
     }

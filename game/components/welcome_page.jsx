@@ -7,9 +7,9 @@ export class WelcomePage extends React.Component{
     }
     render(){
         return(
-            <div>
+            <div className={'start'}>
                 <Link to = {'/table'}>
-                    <button>Start!</button>
+                    <button className={'start-btn'}>Start!</button>
                 </Link>
             </div>
         )
