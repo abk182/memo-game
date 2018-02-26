@@ -18,24 +18,15 @@ export class Card extends React.Component{
         }
     }
     componentDidMount(){
-        let tmp_func = this.onCardClick;
-        this.onCardClick = function () {
-            alert('Rano!')
-        }
         setTimeout(function () {
             this.setState({is_active:false})
-            this.onCardClick = tmp_func;
         }.bind(this),3000)
     }
     componentWillReceiveProps(){
-        //console.log(this.props)
         if(this.props.counter==2){this.setState({is_active:false})}
     }
     onCardClick(){
-        if(!this.state.is_active && this.props.counter<2){
-            this.setState({is_active:true})
-            this.props.handler();
-        }
+        this.props.handler(this);
     }
     render(){
         let pic = this.state.is_active ? this.state.card_val : 'hidden'
