@@ -29,7 +29,7 @@ export class Card extends React.Component{
     render(){
         let pic = this.state.is_open ? this.state.val : this.state.is_active ? this.state.val : 'hidden'
         return(
-            <div className={this.props.value+' '+'card'} onClick={()=>this.props.handler(this)}>
+            <div className={'card'} onClick={()=>this.props.handler(this)}>
                 <img src={'/img/cards/'+pic+'.png'} className={'card'}/>
             </div>
         )

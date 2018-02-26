@@ -8,7 +8,7 @@ export class GameTable extends React.Component{
         this.state={
             playCards:[],
             openCards:[],
-            selectedCard:{id:'',val:''},
+            selectedCard:{},
             counter:0
         }
     }
@@ -19,22 +19,25 @@ export class GameTable extends React.Component{
     componentDidMount(){
     }
     selectCard(card){
-        if(!card.state.is_active && card.props.counter<2) {
-            card.setState({is_active: true})
+        if(!card.state.is_open && !card.state.is_active && card.props.counter<2) {
+            card.setState({is_active: true},)
             this.setState({counter:this.state.counter+1})
-            if (this.state.selectedCard.id==''){
-                this.setState({
-                    selectedCard:{
-                        id:card.state.id,
-                        val:card.state.val
-                    }
-                })
+            if (!this.state.selectedCard.hasOwnProperty('state')){
+                this.setState({selectedCard:card})
             } else {
-                setTimeout(function () {
-                    let msg = (card.state.val == this.state.selectedCard.val) ? 'ono!' : 'ne ono'
-                    alert (msg)
-                    this.setState({selectedCard:{id:'',val:''},counter:0})
-                }.bind(this),1000)
+
+                if (card.state.val == this.state.selectedCard.state.val){
+                    this.state.selectedCard.setState({is_open:true})
+                    card.setState({is_open:true})
+                    this.setState({selectedCard:{},counter:0})
+                } else {
+                    setTimeout(function () {
+                        alert('TRY AGAIN~!')
+                        this.state.selectedCard.setState({is_active:false})
+                        card.setState({is_active:false})
+                        this.setState({selectedCard:{},counter:0})
+                    }.bind(this),1000)
+                }
             }
         }
 
