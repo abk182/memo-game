@@ -17,28 +17,21 @@ export class GameTable extends React.Component{
         this.setState({playCards:engine.generateCards()})
     }
     componentDidMount(){
-        let tmp_fun = this.selectCard
-        this.selectCard= function () {
-            alert('Rano!')
-        }
-        setTimeout(function () {
-            this.selectCard = tmp_fun
-        }.bind(this),3000)
     }
-    selectCard(card_val,card_id,card){
+    selectCard(card){
         if(!card.state.is_active && card.props.counter<2) {
             card.setState({is_active: true})
             this.setState({counter:this.state.counter+1})
             if (this.state.selectedCard.id==''){
                 this.setState({
                     selectedCard:{
-                        id:card_id,
-                        val:card_val
+                        id:card.state.id,
+                        val:card.state.val
                     }
                 })
             } else {
                 setTimeout(function () {
-                    let msg = (card_val == this.state.selectedCard.val) ? 'ono!' : 'ne ono'
+                    let msg = (card.state.val == this.state.selectedCard.val) ? 'ono!' : 'ne ono'
                     alert (msg)
                     this.setState({selectedCard:{id:'',val:''},counter:0})
                 }.bind(this),1000)
@@ -55,7 +48,7 @@ export class GameTable extends React.Component{
                               card_id={card.id}
                               card_val={card.value}
                               counter={this.state.counter}
-                              handler={(obj)=>this.selectCard(card.value,card.id,obj)}/>
+                              handler={(obj)=>this.selectCard(obj)}/>
                     ))
                 }
             </div>

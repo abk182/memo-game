@@ -12,9 +12,10 @@ export class Card extends React.Component{
     constructor(props){
         super(props)
         this.state = {
-            card_val:props.card_val,
-            card_id:props.card_id,
-            is_active:true
+            val:props.card_val,
+            id:props.card_id,
+            is_active:true,
+            is_open:false
         }
     }
     componentDidMount(){
@@ -25,13 +26,10 @@ export class Card extends React.Component{
     componentWillReceiveProps(){
         if(this.props.counter==2){this.setState({is_active:false})}
     }
-    onCardClick(){
-        this.props.handler(this);
-    }
     render(){
-        let pic = this.state.is_active ? this.state.card_val : 'hidden'
+        let pic = this.state.is_open ? this.state.val : this.state.is_active ? this.state.val : 'hidden'
         return(
-            <div className={this.props.value+' '+'card'} onClick={()=>this.onCardClick()}>
+            <div className={this.props.value+' '+'card'} onClick={()=>this.props.handler(this)}>
                 <img src={'/img/cards/'+pic+'.png'} className={'card'}/>
             </div>
         )
