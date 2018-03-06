@@ -52,8 +52,8 @@
       <file leaf-file-name="table.jsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/game/components/table.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="347">
-              <caret line="40" column="5" lean-forward="true" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
+            <state relative-caret-position="177">
+              <caret line="32" column="20" lean-forward="false" selection-start-line="32" selection-start-column="20" selection-end-line="36" selection-end-column="21" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -370,7 +370,7 @@
       <workItem from="1519568715976" duration="9946000" />
       <workItem from="1519579307820" duration="4854000" />
       <workItem from="1519657391968" duration="19420000" />
-      <workItem from="1520364736787" duration="3749000" />
+      <workItem from="1520364736787" duration="4226000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed multiple selection">
       <created>1519578865749</created>
@@ -428,11 +428,18 @@
       <option name="project" value="LOCAL" />
       <updated>1519676416479</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="DEMO (версия без удаления карт и простым счетчиком)">
+      <created>1520369854710</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1520369854711</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83777000" />
+    <option name="totallyTimeSpent" value="84254000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -514,7 +521,8 @@
     <MESSAGE value="Fixed card select" />
     <MESSAGE value="demo v25.02" />
     <MESSAGE value="demo v26.02" />
-    <option name="LAST_COMMIT_MESSAGE" value="demo v26.02" />
+    <MESSAGE value="DEMO (версия без удаления карт и простым счетчиком)" />
+    <option name="LAST_COMMIT_MESSAGE" value="DEMO (версия без удаления карт и простым счетчиком)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -901,8 +909,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/game/components/table.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="347">
-          <caret line="40" column="5" lean-forward="true" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
+        <state relative-caret-position="177">
+          <caret line="32" column="20" lean-forward="false" selection-start-line="32" selection-start-column="20" selection-end-line="36" selection-end-column="21" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>

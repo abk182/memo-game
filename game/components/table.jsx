@@ -21,25 +21,23 @@ export class GameTable extends React.Component{
     }
     selectCard(card){
         if(!card.state.is_open && !card.state.is_active && card.props.counter<2) {
-            card.setState({is_active: true},)
+            card.setState({is_active: true})
             this.setState({counter:this.state.counter+1})
             if (!this.state.selectedCard.hasOwnProperty('state')){
                 this.setState({selectedCard:card})
             } else {
-                if (card.state.val == this.state.selectedCard.state.val){
-                    this.state.selectedCard.setState({is_open:true})
-                    card.setState({is_open:true})
-                    this.setState({selectedCard:{},counter:0,score:this.state.score+1})
-                } else {
-                    setTimeout(function () {
-                        this.state.selectedCard.setState({is_active:false})
-                        card.setState({is_active:false})
+                setTimeout(function () {
+                    let state = (card.state.val == this.state.selectedCard.state.val)? true : false
+                    this.state.selectedCard.setState({is_open:state})
+                    card.setState({is_open:state})
+                    if (state){
+                        this.setState({selectedCard:{},counter:0,score:this.state.score+1})
+                    } else {
                         this.setState({selectedCard:{},counter:0,score:this.state.score-1})
-                    }.bind(this),500)
-                }
+                    }
+                }.bind(this),500)
             }
         }
-
     }
     render(){
         return(
