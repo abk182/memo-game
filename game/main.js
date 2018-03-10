@@ -1,6 +1,6 @@
 import React from 'react'
 import { render } from 'react-dom'
-import { BrowserRouter, Route, Link} from 'react-router-dom'
+import { BrowserRouter, Route, Link } from 'react-router-dom'
 
 import { GameTable } from "./components/table.jsx"
 import { WelcomePage } from './components/welcome_page.jsx'
