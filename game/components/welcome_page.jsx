@@ -9,7 +9,7 @@ export class WelcomePage extends React.Component{
         return(
             <div className={'start'} data-tid="NewGame-startGame">
                 <Link to = {'/table'}>
-                    <button className={'start-btn'}>Start!</button>
+                    <button className={'start-btn'}>!!!!!!!!!!!!!!</button>
                 </Link>
             </div>
         )
