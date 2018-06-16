@@ -9,20 +9,20 @@ module.exports = {
     },
     output: {
         path: path.join(__dirname,'./public/js'),
-        filename: 'bundle.js',
-        publicPath: "/"
+        filename: 'bundle.js'
     },
-    module:{
-        rules: [{
-            test: [/\.js$/,/\.jsx$/], use: 'babel-loader', exclude: /node_modules/
-        }]
+    module: {
+        rules: [
+            {
+                test: [/\.jsx?$/, /\.js?$/],
+                include: path.resolve(__dirname, './game'),
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['react']
+                    },
+                },
+            },
+        ],
     },
-    plugins: [
-        /*new CleanWebpackPlugin(['public']),
-        new HtmlWebpackPlugin({
-            title: 'Production',
-            filename: 'index1htm;.'
-            template: './public/index.html'
-        })*/
-    ]
 };
