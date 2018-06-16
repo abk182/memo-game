@@ -1,7 +1,4 @@
 const path = require('path')
-//const CleanWebpackPlugin = require('clean-webpack-plugin') //очищает директорию
-//const HtmlWebpackPlugin = require('html-webpack-plugin') //создает index.html
-//const MinifyPlugin = require('babel-minify-webpack-plugin');
 
 module.exports = {
     entry: {
